@@ -1,0 +1,9 @@
+<% layout("./layout.eta") %>
+
+<h1 class="h-100 d-flex align-items-center justify-content-center m-3">URL Shortener</h1>
+
+<form action="/" method="POST" class="h-100 d-flex align-items-center justify-content-center p-3 m-3">
+  URL:<br/>
+  <input type="url" name="originalURL" />
+  <input type="submit" value="Generate short url" />
+</form>

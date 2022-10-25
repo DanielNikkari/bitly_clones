@@ -1,8 +1,10 @@
-import { serve } from "./deps.js";
+import { Application } from "./deps.js"
+import { renderMiddleware } from "./middleware/renderMiddleware.js"
+import { router } from "./routes/routes.js"
 
-const handleRequest = async (request) => {
-  console.log("Responding with Hello world!");
-  return new Response("Hello world!");
-};
+const app = new Application()
 
-serve(handleRequest, { port: 7777 });
+app.use(renderMiddleware)
+app.use(router.routes())
+
+app.listen({ port:7777 })
