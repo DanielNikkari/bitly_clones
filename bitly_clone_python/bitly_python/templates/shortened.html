@@ -1,0 +1,6 @@
+{% extends "layout.html" %}
+{% block title %}Index{% endblock %}
+
+{% block main %}
+<span class="h-100 d-flex align-items-center justify-content-center p-3 m-3"><a href="{{ original_url }}">{{ original_url }} </a> is now at <a href="/shortened/open?id={{ id }}"> {{ shortened_url }}</a></span>
+{% endblock %}
