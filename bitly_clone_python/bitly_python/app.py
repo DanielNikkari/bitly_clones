@@ -19,6 +19,7 @@ app = Flask(__name__)
 @app.route("/", methods=["GET", "POST"])
 def index():
   if request.method == "POST":
+    # return {}, 200
     input_url = request.form.to_dict()['originalURL']
     random_found = False
     url_length = 6
