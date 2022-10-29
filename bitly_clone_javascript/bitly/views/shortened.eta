@@ -1,3 +1,7 @@
 <% layout("./layout.eta") %>
 
-<span class="h-100 d-flex align-items-center justify-content-center p-3 m-3"><a href="<%= it.original_url %>"><%= it.original_url %></a> is now at <a href="/shortened/open/<%= it.url_id %>"><%= it.shortened_url %></a></span>
+<span class="h-100 d-flex align-items-center justify-content-center p-3 m-3"><a class="m-2" href="<%= it.original_url %>"><%= it.original_url %></a> is now at <a class="m-2" href="/shortened/open/<%= it.url_id %>"><%= it.shortened_url %></a></span>
+
+<div class="col text-center">
+  <a class="btn btn-outline-success m-5" href="/">New url</a>
+</div>
