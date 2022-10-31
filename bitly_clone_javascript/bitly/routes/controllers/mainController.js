@@ -48,14 +48,14 @@ const shortenedUrl = async ({ render, params }) => {
 }
 
 const openShortUrl = async ({ params, response }) => {
-  const destination = (await getWithId(params.id))[0].url
+  const destination = (await getWhitShortUrl(params.shortened_url))[0].url
   response.redirect(destination)
 }
 
 const randomUrl = async ({response}) => {
   const res = await getAll()
-  const randomUrl = res[randomInt(res.length)].url
-  response.redirect(randomUrl)
+  const randomUrlDest = res[randomInt(res.length)].url
+  response.redirect(randomUrlDest)
 }
 
 export { main, transformUrl, shortenedUrl, openShortUrl, randomUrl }

@@ -1,0 +1,18 @@
+<% layout("./layout.eta") %>
+
+<h1 class="h-100 d-flex align-items-center justify-content-center m-3 display-3">URL Shortener</h1>
+
+<form action="/" method="POST" class="h-100 d-flex align-items-center justify-content-center p-3 m-3">
+  <div class="form-group">
+    <input id="urlid" class="mb-1" type="url" name="originalURL" placeholder="Enter url" />
+  <div class="form-group">
+    <small id="urlHelp" class="form-text text-muted">Remember to use full url, e.g., add https prefix.</small>
+  </div>
+  <div class="form-group">
+    <input class="btn btn-outline-success mt-4" type="submit" value="Generate short url" />
+  </div>
+</form>
+
+<div class="col">
+  <a class="btn btn-outline-success mt-3" href="/random">Random url</a>
+</div>
