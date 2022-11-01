@@ -31,9 +31,18 @@ In addition, there are variables **DOMAIN, SHORTURL, and CLONE**, these are help
 
 #### The main page
 
-- Deno Oak: average = 11.7ms, p(90) = 12.95ms, p(95) = 14.18ms
-- Node Express: average = 3.12ms, p(90) = 4.75ms, p(95) = 5.47ms
-- Flask: average = 16.66ms, p(90) = 9.9ms, p(95) = 10.72ms
+- Deno Oak:
+    - average = 11.7ms
+    - p(90) = 12.95ms
+    - p(95) = 14.18ms
+- Node Express:
+    - average = 3.12ms
+    - p(90) = 4.75ms
+    - p(95) = 5.47ms
+- Flask:
+    - average = 16.66ms
+    - p(90) = 9.9ms
+    - p(95) = 10.72ms
 
 ### Posting form to database
 
