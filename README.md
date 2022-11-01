@@ -46,21 +46,48 @@ In addition, there are variables **DOMAIN, SHORTURL, and CLONE**, these are help
 
 ### Posting form to database
 
-- Deno Oak: average = 240ms, p(90) = 330ms, p(95) = 340ms
-- Node Express: average = 100ms, p(90) = 230ms, p(95) = 230ms
-- Flask: average = 90ms, p(90) = 130ms, p(95) = 130ms
+- Deno Oak:
+    - average = 240ms
+    - p(90) = 330ms
+    - p(95) = 340ms
+- Node Express:
+    - average = 100ms
+    - p(90) = 230ms
+    - p(95) = 230ms
+- Flask:
+    - average = 90ms
+    - p(90) = 130ms
+    - p(95) = 130ms
 
 ### Requesting redirection
 
-- Deno Oak: average = 270ms, p(90) = 800ms, p(95) = 1110ms
-- Node Express: average = 260ms, p(90) = 830ms, p(95) = 850ms
-- Flask: average = 240ms, p(90) = 710ms, p(95) = 770ms
+- Deno Oak:
+    - average = 270ms
+    - p(90) = 800ms
+    - p(95) = 1110ms
+- Node Express:
+    - average = 260ms
+    - p(90) = 830ms
+    - p(95) = 850ms
+- Flask:
+    - average = 240ms
+    - p(90) = 710ms
+    - p(95) = 770ms
 
 ### Requesing random url
 
-- Deno Oak: average = 120ms, p(90) = 230ms, p(95) = 230ms
-- Node Express: average = 80ms, p(90) = 220ms, p(95) = 230ms
-- Flask: average = 60ms, p(90) = 60ms, p(95) = 90ms
+- Deno Oak:
+    - average = 120ms
+    - p(90) = 230ms
+    - p(95) = 230ms
+- Node Express:
+    - average = 80ms
+    - p(90) = 220ms
+    - p(95) = 230ms
+- Flask:
+    - average = 60ms
+    - p(90) = 60ms
+    - p(95) = 90ms
 
 ### Reflection on results
 
