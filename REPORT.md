@@ -32,63 +32,65 @@ In addition, there are variables **DOMAIN, SHORTURL, and CLONE**, these are help
 #### The main page
 
 - Deno Oak:
-    - average = 11.7ms
-    - p(90) = 12.95ms
-    - p(95) = 14.18ms
+    - average = 11.46ms
+    - p(95) = 13.69ms
+    - p(99) = 21.09ms
 - Node Express:
     - average = 3.12ms
     - p(90) = 4.75ms
-    - p(95) = 5.47ms
+    - p(99) = 5.47ms
 - Flask:
-    - average = 16.66ms
-    - p(90) = 9.9ms
-    - p(95) = 10.72ms
+    - average = 17.63ms
+    - p(95) = 16.31ms
+    - p(99) = 22.81ms
 
 ### Posting form to database
 
 - Deno Oak:
-    - average = 240ms
-    - p(90) = 330ms
-    - p(95) = 340ms
+    - average = 170ms
+    - p(95) = 330ms
+    - p(99) = 350ms
 - Node Express:
-    - average = 100ms
-    - p(90) = 230ms
-    - p(95) = 230ms
+    - average = 60ms
+    - p(95) = 240ms
+    - p(99) = 250ms
 - Flask:
-    - average = 90ms
-    - p(90) = 130ms
-    - p(95) = 130ms
+    - average = 80ms
+    - p(95) = 140ms
+    - p(99) = 150ms
 
 ### Requesting redirection
 
 - Deno Oak:
-    - average = 270ms
-    - p(90) = 800ms
-    - p(95) = 1110ms
+    - average = 1020ms
+    - p(95) = 2290ms
+    - p(99) = 2490ms
 - Node Express:
-    - average = 260ms
-    - p(90) = 830ms
-    - p(95) = 850ms
+    - average = 950ms
+    - p(95) = 2170ms
+    - p(99) = 2540ms
 - Flask:
-    - average = 240ms
-    - p(90) = 710ms
-    - p(95) = 770ms
+    - average = 760ms
+    - p(95) = 1810ms
+    - p(99) = 2160ms
 
 ### Requesing random url
 
 - Deno Oak:
-    - average = 120ms
-    - p(90) = 230ms
-    - p(95) = 230ms
+    - average = 140ms
+    - p(95) = 430ms
+    - p(99) = 890ms
 - Node Express:
-    - average = 80ms
-    - p(90) = 220ms
-    - p(95) = 230ms
+    - average = 240ms
+    - p(95) = 1050ms
+    - p(99) = 1090ms
 - Flask:
-    - average = 60ms
-    - p(90) = 60ms
-    - p(95) = 90ms
+    - average = 240ms
+    - p(95) = 560ms
+    - p(99) = 1450ms
 
 ### Reflection on results
 
-There were difference between all of the three implementations. The differences between JavaScript implementations (Deno Oak and Node Express) were less noticable and the differences between JavaScript implementations and Python implementations (Flask) were more noticable. In most cases the Python Flask application had better performance under stress, this might be for being more lightweight and powerful compared to Express and Oak. From the programming language point of view Python is more likely to be slower than JavaScript. Nevertheless, Flask managed to perform with high efficiency. In comparison between Express and Oak, Express managed to have better performance accross the board. However, reading [online](https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-2-https-hello-name-be84f0afd053) comperhensive testing between Deno and Node.js implied that Deno was faster, however, with Express and Oak, Express was faster in this case.
+There were difference between all of the three implementations. The differences between implementations (Deno Oak, Node Express, and Flask) were less noticable in, e.g., getting random url and more noticable, for example, in redirection. In most cases the Python Flask application had similiar performance under stress compared to JavaScript, however, in some cases Flask had better performance, for example, in redirecting. This could be for Flask being more lightweight compared to Express and Oak. From the programming language point of view Python is more likely to be slower than JavaScript. Nevertheless, Flask managed to perform with compareble efficiency. In comparison between Express and Oak, both were in fairly equal one being better than other variably. However, reading [online](https://choubey.medium.com/performance-comparison-deno-vs-node-js-part-2-https-hello-name-be84f0afd053) comperhensive testing between Deno and Node.js implied that Deno was faster, however, with the load tests conducted on Express and Oak, there was not enough indication to this.
+
+In case if the application is deployed, the performance could be possibly imporved through a content delivery network (CDN) by distributing the load. Moreover, file caching could be implemented, as the application has very little information to cache it would not make a significant difference. Next, the amount of HTTP request could be reduced, for example, when creating the short URL instead of making redirection to a new page everything could happen on the same page dynamically reducing the need for the HTTP redirection. Lastly, the applications may have room for some general optimization in the code.
