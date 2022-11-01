@@ -1,5 +1,7 @@
 # bit.ly clones
 
+**THE CONTENT OF THIS README IS THE SAME AS IN THE REPORT**
+
 ## Run bit.ly clones
 
 In order to run the clones you must have **Docker** installed on your computerand running. Then navigate to the directory with the file **docker-compose.yml** and run command `docker-compose up --build`, after the composing you can access the application in the browser:
