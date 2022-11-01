@@ -48,6 +48,10 @@ const shortenedUrl = async ({ render, params }) => {
 }
 
 const openShortUrl = async ({ params, response }) => {
+  if (params.shortened_url === "random") {
+    console.log("Redirecting through openShortUrl")
+    return await randomUrl()
+  }
   const destination = (await getWhitShortUrl(params.shortened_url))[0].url
   response.redirect(destination)
 }

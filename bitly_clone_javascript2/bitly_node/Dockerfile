@@ -1,7 +1,5 @@
 FROM node:16
 
-EXPOSE 7777
-
 WORKDIR /app_node
 
 COPY package*.json ./
