@@ -8,6 +8,8 @@ In order to run the clones you must have **Docker** installed on your computer a
 - bitly_clone_javascript2 (Node Express): localhost:8080
 - bitly_clone_python (Flask): localhost:1234
 
+You can **run all the bit.ly clones** simultaneously by navigating to the root directory **bitly_clones** and running `docker-compose up --build`. The bit.ly clones will share the database togheter if you decide to run them simultaneously.
+
 ### IMPORTANT FOR RUNNING DENO
 
 The **Dockerfile** for Deno Oak application uses `FROM lukechannings/deno` as it is optimised for Apple silicon computers. If you run the application on other machines than ones with Apple silicon comment out the `FROM lukechannings/deno` and uncomment the `FROM denoland/deno:alpine-1.26.2`

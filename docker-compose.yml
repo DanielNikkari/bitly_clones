@@ -1,0 +1,61 @@
+version: "3.4"
+
+services:
+  bitly_oak:
+    build: bitly_clone_javascript/bitly
+    image: bitly
+    restart: "no"
+    volumes:
+      - ./bitly_clone_javascript/bitly/:/app
+    ports:
+      - 7777:7777
+    depends_on:
+      - database
+      - flyway
+    env_file:
+      - allprojects.env
+
+  bitly_express:
+    build: bitly_clone_javascript2/bitly_node
+    image: bitly_node
+    restart: "no"
+    volumes:
+      - ./bitly_clone_javascript2/bitly_node/:/app
+    ports:
+      - 8080:8080
+    depends_on:
+      - database
+      - flyway
+    env_file:
+      - allprojects.env
+
+  bitly_flask:
+    build: bitly_clone_python/bitly_python
+    image: bitly_python
+    restart: "no"
+    volumes:
+      - ./bitly_clone_python/bitly_python/:/app
+    ports:
+      - 1234:1234
+    depends_on:
+      - database
+      - flyway
+    env_file:
+      - allprojects.env
+
+  database:
+    container_name: dab-p1-database-94059c7f-2b9f-447e-8d39-bf6f4074f212
+    image: postgres:14.1
+    restart: "no"
+    env_file:
+        - allprojects.env
+
+  flyway:
+    image: flyway/flyway:8.4.0-alpine
+    depends_on:
+      - database
+    volumes:
+      - ${PWD}/bitly_clone_javascript:/flyway/sql
+    command: -connectRetries=60 -baselineOnMigrate=true migrate
+    env_file:
+      - allprojects.env

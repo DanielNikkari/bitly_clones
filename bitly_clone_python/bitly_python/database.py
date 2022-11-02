@@ -8,8 +8,10 @@ import os
 USERNAME = os.environ['POSTGRES_USER']
 PASSWORD = os.environ['POSTGRES_PASSWORD']
 DATABASE = os.environ['POSTGRES_DB']
-HOST = 'dab-p1-database-94059c7f-2b9f-447e-8d39-bf6f4074f209'
-PORT = '5432'
+HOST = os.environ['PGHOST']
+PORT = os.environ['PGPORT']
+# HOST = 'dab-p1-database-94059c7f-2b9f-447e-8d39-bf6f4074f209'
+# PORT = '5432'
 
 def sendQuery(query, args):
   try:
